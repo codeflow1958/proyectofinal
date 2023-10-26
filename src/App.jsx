@@ -17,7 +17,7 @@ function App() {
   }, [ciudad]);
   return (
     <>
-      <div className=" bg- ">
+      <div className=" bg-black ">
         <nav className="flex">
           <div className="flex-1 w-64">
             <input

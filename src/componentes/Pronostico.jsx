@@ -19,8 +19,8 @@ function Pronostico({ data }) {
               />
             </div>
             <div className=" grid grid-cols-2">
-              <div className="minima">Min{item.temp?.min}</div>
-              <div className="maxima">Max{item.temp?.max}</div>
+              <div className="minima">{item.temp?.min}</div>
+              <div className="maxima">{item.temp?.max}</div>
             </div>
           </div>
         ))}
