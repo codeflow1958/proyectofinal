@@ -17,7 +17,7 @@ function App() {
   }, [ciudad]);
   return (
     <>
-      <div className=" bg- ">
+      <main className=" h-screen ">
         <nav className="flex">
           <div className="flex-1 w-64">
             <input
@@ -41,7 +41,7 @@ function App() {
         </nav>
 
         {data && (
-          <div className="w-100 flex">
+          <div className="w-100 flex mt-5">
             <Tarjetap data={data} />
             <div className="w-100">
               <Pronostico data={data} />
@@ -49,7 +49,7 @@ function App() {
             </div>
           </div>
         )}
-      </div>
+      </main>
     </>
   );
 }

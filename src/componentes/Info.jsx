@@ -2,11 +2,11 @@ function Info({ data }) {
   return (
     <>
       <div className=" grid place-content-center">
-        <div className="">
+        <div className="mt-5">
           <h1> Today Hightlights</h1>
         </div>
         <div>
-          <section className="w-96 grid grid-cols-2 gap-4 py-3 px-3 ">
+          <section className="w-96 grid grid-cols-2 gap-4 py-3 px-3 mt-2 ">
             <div>
               <p>Wind Status</p>
               <p>{data.current?.wind_speed}Mph</p>
@@ -24,7 +24,7 @@ function Info({ data }) {
               </div>
             </div>
           </section>
-          <section className="w-96 grid grid-cols-2 gap-4 py-3  px-3">
+          <section className="w-96 grid grid-cols-2 gap-4 py-3  px-3 mt-3">
             <div>
               <p>visibilyti</p>
               <p>{data.current?.visibility} </p>
