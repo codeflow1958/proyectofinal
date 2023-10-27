@@ -16,7 +16,6 @@ function useClima() {
     setState(datos);
   };
 
-
   //console.log(week);
   //console.log(data);
   //console.log(lat);
@@ -34,7 +33,7 @@ function useClima() {
   // fetch a la segunda api
   useEffect(() => {
     getData(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${country}&limit=5&appid=2f9b41a511d1351d341bc7bd79cd2e13`,
+      `https://api.openweathermap.org/geo/1.0/direct?q=${country}&limit=5&appid=2f9b41a511d1351d341bc7bd79cd2e13`,
       setWeek
     );
   }, [country]);
