@@ -12,16 +12,16 @@ function Tarjetap({ data }) {
 
   return (
     <>
-      <div className="w-60 text-whithe  ">
+      <div className="w-60 h-screen bg-blue-900 ">
         <div></div>
-        <div className=" grid  justify-center ">
+        <div className=" grid  justify-center bg ">
           <img
             className=" object-cover h-48 w-96 "
             src={`https://openweathermap.org/img/wn/${data.current?.weather[0].icon}.png`}
             alt=""
           />
         </div>
-        <div className=" grid  justify-center text-whithe  ">
+        <div className=" grid  justify-center  text-white">
           <p>{data.current?.temp} c </p>
           <p>{data.current?.weather[0].description}</p>
 
