@@ -10,7 +10,7 @@ function App() {
   const [ciudad, setCiudad] = useState("");
   const [buscar, setBuscar] = useState(false);
 
-  const { data, country, changeContry, geoPosition } = useClima();
+  const { data, country, changeContry, geoPosition, week } = useClima();
   //console.log(data);
   ///console.log(country);
   useEffect(() => {
@@ -44,7 +44,15 @@ function App() {
           <button className="btn btn-primary " onClick={geoPosition}>
             localizar
           </button>
-          <div> los resultados</div>
+          <div>
+            {week.map((element, i) => (
+              <li>
+                <button key={i} onClick={(e) => setCiudad(e.target.value)}>
+                  {element.name}
+                </button>
+              </li>
+            ))}
+          </div>
         </div>
       )}
 

@@ -6,6 +6,7 @@ function useClima() {
   const [lat, setLat] = useState("");
   const [lon, setLon] = useState("");
   const [country, setCountry] = useState("guatemala");
+  const [listaResult, setListaResult] = useState([]);
 
   // costante para realizar el fetch
   const getData = async (url, setState) => {
@@ -17,8 +18,8 @@ function useClima() {
 
   //console.log(week);
   //console.log(data);
-  console.log(lat);
-  console.log(lon);
+  //console.log(lat);
+  //console.log(lon);
 
   useEffect(() => {
     if (lat === "" && lon === "") return;
@@ -58,7 +59,6 @@ function useClima() {
   const geoPosition = async () => {
     navigator.geolocation.getCurrentPosition(handleSuccess, handleError);
   };
-
   const handleSuccess = (pos) => {
     const { latitude, longitude } = pos.coords;
     setLat(latitude);
