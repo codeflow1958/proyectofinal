@@ -22,7 +22,7 @@ function App() {
 
   return (
     <>
-      <main className="m">
+      <main>
         <div className="bg-[#1E213A]">
           {!buscar && (
             <div className="mr-5">
@@ -76,7 +76,6 @@ function App() {
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   >
-                    {" "}
                     <circle cx="11" cy="11" r="8" />{" "}
                     <line x1="21" y1="21" x2="16.65" y2="16.65" />
                   </svg>
@@ -102,7 +101,7 @@ function App() {
                     />
                   </svg>
                 </button>
-                <div className="text-white                                   ">
+                <div className="text-white">
                   {week.map((element, i) => (
                     <li>
                       <button
