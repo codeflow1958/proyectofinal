@@ -10,10 +10,7 @@ function Pronostico({ data }) {
     <>
       <div className="w-100 grid grid-cols-4 gap-4 ">
         {data.daily?.map((item, idx) => (
-          <div
-            key={idx}
-            className="py-2 px-2 bg-teal-400 grid place-items-center"
-          >
+          <div key={idx} className="py-2 px-2  grid place-items-center">
             <div> {dateFormat(item.dt)}</div>
             <div>
               <img

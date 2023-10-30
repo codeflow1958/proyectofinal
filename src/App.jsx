@@ -32,7 +32,7 @@ function App() {
 
           {buscar && (
             <div>
-              <nav className="grid grid-cols-1">
+              <nav className="grid">
                 <button className="btn btn-primary" onClick={aparece}>
                   cerrar
                 </button>
@@ -72,7 +72,7 @@ function App() {
         </div>
 
         {data && (
-          <div className="w-100 flex">
+          <div className="w-100 flex h-auto">
             <Tarjetap data={data} />
             <div className="w-100">
               <Pronostico data={data} />

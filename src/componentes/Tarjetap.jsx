@@ -12,7 +12,7 @@ function Tarjetap({ data }) {
 
   return (
     <>
-      <div className="w-96 aling-center  md:mx-auto ">
+      <div className="w-96 aling-center  md:mx-auto  h-auto">
         <div className=" grid place-items-center mt-14">
           <img
             class="scale-150 "
