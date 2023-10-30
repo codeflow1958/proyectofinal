@@ -22,7 +22,7 @@ function App() {
 
   return (
     <>
-      <main>
+      <main className="m">
         <div className="bg-[#1E213A]">
           {!buscar && (
             <div className="mr-5">
@@ -124,7 +124,7 @@ function App() {
         {data && (
           <div className="w-100 flex h-auto">
             <Tarjetap data={data} />
-            <div className="w-100 bg-[#100E1D] text-white">
+            <div className="w-100 bg-[#100E1D] text-white ">
               <Pronostico data={data} />
               <Info data={data} />
             </div>
