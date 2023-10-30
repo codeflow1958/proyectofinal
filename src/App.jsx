@@ -47,7 +47,10 @@ function App() {
           <div>
             {week.map((element, i) => (
               <li>
-                <button key={i} onClick={(e) => setCiudad(e.target.value)}>
+                <button
+                  key={i}
+                  onClick={() => changeContry({ target: { value: element } })}
+                >
                   {element.name}
                 </button>
               </li>
