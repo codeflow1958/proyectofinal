@@ -13,9 +13,9 @@ function App() {
   const { data, country, changeContry, geoPosition, week } = useClima();
   //console.log(data);
   ///console.log(country);
-  useEffect(() => {
-    console.log(ciudad);
-  }, [ciudad]);
+  // useEffect(() => {
+  //   console.log(ciudad);
+  // }, [ciudad]);
   const aparece = () => {
     setBuscar(!buscar);
   };
@@ -23,7 +23,7 @@ function App() {
   return (
     <>
       <main>
-        <div>
+        <div className="bg-[#1E213A]">
           {!buscar && (
             <button className="btn btn-primary" onClick={aparece}>
               Buscar por lugares
@@ -32,7 +32,7 @@ function App() {
 
           {buscar && (
             <div>
-              <nav className="grid">
+              <nav className="">
                 <button className="btn btn-primary" onClick={aparece}>
                   cerrar
                 </button>

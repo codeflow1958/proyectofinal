@@ -12,7 +12,7 @@ function Tarjetap({ data }) {
 
   return (
     <>
-      <div className="w-96 aling-center  md:mx-auto  h-auto">
+      <div className="w-96 aling-center  md:mx-auto  h-auto bg-[#1E213A]">
         <div className=" grid place-items-center mt-14">
           <img
             class="scale-150 "
@@ -21,12 +21,14 @@ function Tarjetap({ data }) {
           />
         </div>
         <div className="grid  place-items-center">
-          <p>{data.current?.temp} c </p>
-          <p>{data.current?.weather[0].description}</p>
+          <p className="text-7xl text-white">{data.current?.temp} c </p>
+          <p className="text-4xl p-10 text-white">
+            {data.current?.weather[0].description}
+          </p>
 
           <div>
             <div>
-              <p>Today</p>
+              <p className="text-2xl text-white m-20">Today</p>
               <i> </i>
             </div>
             <p> </p>
