@@ -8,7 +8,7 @@ function Pronostico({ data }) {
 
   return (
     <>
-      <div className="w-100 grid grid-cols-4 gap-5 text-white mx-10">
+      <div className="w-100 grid grid-cols-4 gap-5 text-white ">
         {data.daily?.map((item, idx) => (
           <div
             key={idx}

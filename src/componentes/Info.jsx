@@ -3,7 +3,7 @@ function Info({ data }) {
     <>
       <div className=" grid place-content-center">
         <div className="">
-          <h1> Today Hightlights</h1>
+          <h1 className=" text-xl text-left "> Today Hightlights</h1>
         </div>
         <div>
           <section className="w-96 grid grid-cols-2 gap-4 py-3 px-3 ">
@@ -14,13 +14,13 @@ function Info({ data }) {
             <div className="bg-[#1E213A]">
               <p>Humidity</p>
               <p>{data.current?.humidity}</p>
-              <div class="w-full bg-neutral-200 dark:bg-neutral-600">
+              <div class="mb-5 h-2 rounded-full bg-gray-200">
                 <div
-                  class="bg-primary p-0.5 text-center text-xs font-medium leading-none text-primary-100"
+                  class="h-2 rounded-full bg-orange-500"
                   style={{ width: data.current?.humidity }}
-                >
-                  <p className="text-withe">{data.current?.humidity} %</p>
-                </div>
+                ></div>
+
+                <p className="text-withe">{data.current?.humidity} %</p>
               </div>
             </div>
           </section>
