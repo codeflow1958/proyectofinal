@@ -6,13 +6,13 @@ function useClima() {
   const [lat, setLat] = useState("");
   const [lon, setLon] = useState("");
   const [country, setCountry] = useState("guatemala");
+  const [listaResult, setListaResult] = useState([]);
 
   // costante para realizar el fetch
   const getData = async (url, setState) => {
     const res = await fetch(url);
     const datos = await res.json();
 
-    console.log(datos);
     setState(datos);
   };
 
@@ -33,7 +33,10 @@ function useClima() {
   // fetch a la segunda api
   useEffect(() => {
     getData(
-      `https://api.openweathermap.org/geo/1.0/direct?q=${country}&limit=5&appid=2f9b41a511d1351d341bc7bd79cd2e13`,
+
+      `http://api.openweathermap.org/geo/1.0/direct?q=${
+        country == undefined ? "guatemala" : country
+      }&limit=5&appid=2f9b41a511d1351d341bc7bd79cd2e13`,
       setWeek
     );
   }, [country]);
@@ -53,9 +56,28 @@ function useClima() {
   useEffect(() => {
     setLon(week[0]?.lon);
   }, [week]);
+  ///// funcion para la geo localizacion
+  const geoPosition = async () => {
+    navigator.geolocation.getCurrentPosition(handleSuccess, handleError);
+  };
+  const handleSuccess = (pos) => {
+    const { latitude, longitude } = pos.coords;
+    setLat(latitude);
+    setLon(longitude);
+    console.log(latitude);
+    console.log(longitude);
+  };
+
+  const handleError = () => {
+    console.log("Sin permisos de ubicación");
+    window.alert("Sin Permisos de Ubicacion");
+  };
+
+  ///------- aca termina la funcion de geolocalizacion------------////
 
   /// aca estoy retornando la data
-  return { data, week, dateFormat, changeContry, country };
+
+  return { data, week, dateFormat, changeContry, country, geoPosition };
 }
 // aca estoy exportando
 export default useClima;
