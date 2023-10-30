@@ -23,7 +23,7 @@ function App() {
   return (
     <>
       <button className="btn btn-primary" onClick={aparece}>
-        buscar por lugares
+        Buscar por lugares
       </button>
 
       {buscar && (
@@ -51,7 +51,7 @@ function App() {
                   key={i}
                   onClick={() => changeContry({ target: { value: element } })}
                 >
-                  {element.name}
+                  {element.name},{element.country}
                 </button>
               </li>
             ))}

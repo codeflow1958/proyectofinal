@@ -12,7 +12,7 @@ function Tarjetap({ data }) {
 
   return (
     <>
-      <div className="w-60 ">
+      <div className=" ">
         <div></div>
         <div>
           <img
