@@ -26,7 +26,7 @@ function App() {
         <div className="bg-[#1E213A]">
           {!buscar && (
             <div className="mr-5">
-              <button className="mt-10 mr-10" onClick={aparece}>
+              <button className=" mr-10" onClick={aparece}>
                 <svg
                   class="h-8 w-8 text-white"
                   width="24"
@@ -52,7 +52,7 @@ function App() {
 
           {buscar && (
             <div>
-              <div className="mt-10">
+              <div>
                 <button
                   className="btn-close btn-close-white"
                   onClick={aparece}
