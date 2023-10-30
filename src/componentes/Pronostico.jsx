@@ -10,10 +10,14 @@ function Pronostico({ data }) {
     <>
       <div className="w-100 grid grid-cols-4 gap-4 ">
         {data.daily?.map((item, idx) => (
-          <div key={idx} className="py-2 px-2 bg-teal-400">
+          <div
+            key={idx}
+            className="py-2 px-2 bg-teal-400 grid place-items-center"
+          >
             <div> {dateFormat(item.dt)}</div>
             <div>
               <img
+                class="scale-125 "
                 src={`https://openweathermap.org/img/wn/${item?.weather[0].icon}.png`}
                 alt="Weather"
               />

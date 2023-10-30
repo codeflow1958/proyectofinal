@@ -12,15 +12,15 @@ function Tarjetap({ data }) {
 
   return (
     <>
-      <div className=" ">
-        <div></div>
-        <div>
+      <div className="w-96 aling-center  md:mx-auto ">
+        <div className=" grid place-items-center mt-14">
           <img
+            class="scale-150 "
             src={`https://openweathermap.org/img/wn/${data.current?.weather[0].icon}.png`}
             alt=""
           />
         </div>
-        <div>
+        <div className="grid  place-items-center">
           <p>{data.current?.temp} c </p>
           <p>{data.current?.weather[0].description}</p>
 
@@ -31,7 +31,6 @@ function Tarjetap({ data }) {
             </div>
             <p> </p>
           </div>
-          <p></p>
         </div>
       </div>
     </>

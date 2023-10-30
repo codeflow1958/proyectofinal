@@ -22,52 +22,65 @@ function App() {
 
   return (
     <>
-      <button className="btn btn-primary" onClick={aparece}>
-        Buscar por lugares
-      </button>
+      <main>
+        <div>
+          {!buscar && (
+            <button className="btn btn-primary" onClick={aparece}>
+              Buscar por lugares
+            </button>
+          )}
 
-      {buscar && (
-        <div className="">
-          <input
-            type="text"
-            onChange={(e) => setCiudad(e.target.value)}
-            value={ciudad}
-          />
-          <button
-            className="btn btn-primary"
-            onClick={() => {
-              changeContry(ciudad);
-            }}
-          >
-            Buscar
-          </button>
-          <button className="btn btn-primary " onClick={geoPosition}>
-            localizar
-          </button>
-          <div>
-            {week.map((element, i) => (
-              <li>
-                <button
-                  key={i}
-                  onClick={() => changeContry({ target: { value: element } })}
-                >
-                  {element.name},{element.country}
+          {buscar && (
+            <div>
+              <nav className="grid grid-cols-1">
+                <button className="btn btn-primary" onClick={aparece}>
+                  cerrar
                 </button>
-              </li>
-            ))}
-          </div>
+                <input
+                  type="text"
+                  onChange={(e) => setCiudad(e.target.value)}
+                  value={ciudad}
+                />
+                <button
+                  className="btn btn-primary"
+                  onClick={() => {
+                    changeContry(ciudad);
+                  }}
+                >
+                  Buscar
+                </button>
+                <button className="btn btn-primary " onClick={geoPosition}>
+                  localizar
+                </button>
+                <div>
+                  {week.map((element, i) => (
+                    <li>
+                      <button
+                        key={i}
+                        onClick={() =>
+                          changeContry({ target: { value: element } })
+                        }
+                      >
+                        {element.name},{element.country}
+                      </button>
+                    </li>
+                  ))}
+                </div>
+              </nav>
+            </div>
+          )}
         </div>
-      )}
 
-      {data && (
-        <div className="w-100 flex">
-          <Tarjetap data={data} />
-          <div className="w-100">
-            <Pronostico data={data} />
-            <Info data={data} />
+        {data && (
+          <div className="w-100 flex">
+            <Tarjetap data={data} />
+            <div className="w-100">
+              <Pronostico data={data} />
+              <Info data={data} />
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </main>
     </>
   );
 }
