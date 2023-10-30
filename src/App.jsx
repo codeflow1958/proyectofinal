@@ -8,48 +8,55 @@ import { useEffect, useState } from "react";
 function App() {
   // aca esta la cosntante de la data obtenida del la api
   const [ciudad, setCiudad] = useState("");
+  const [buscar, setBuscar] = useState(false);
 
-  const { data, country, changeContry } = useClima();
+  const { data, country, changeContry, geoPosition } = useClima();
   //console.log(data);
   ///console.log(country);
   useEffect(() => {
     console.log(ciudad);
   }, [ciudad]);
+  const aparece = () => {
+    setBuscar(!buscar);
+  };
+
   return (
     <>
-      <div className=" bg- ">
-        <nav className="flex">
-          <div className="flex-1 w-64">
-            <input
-              type="text"
-              onChange={(e) => setCiudad(e.target.value)}
-              value={ciudad}
-            />
-            <button
-              className=" bg-blue-400 rounded- hover:bg-blue-500 text-white font-bold py-2 px-4 rounded "
-              onClick={() => {
-                changeContry(ciudad);
-              }}
-            >
-              Buscar
-            </button>
-          </div>
-          <div className=" flex gap-2 flex-1 w-32">
-            <p>Weather</p>
-            <p> {ciudad}</p>
-          </div>
-        </nav>
+      <button className="btn btn-primary" onClick={aparece}>
+        buscar por lugares
+      </button>
 
-        {data && (
-          <div className="w-100 flex">
-            <Tarjetap data={data} />
-            <div className="w-100">
-              <Pronostico data={data} />
-              <Info data={data} />
-            </div>
+      {buscar && (
+        <div className="">
+          <input
+            type="text"
+            onChange={(e) => setCiudad(e.target.value)}
+            value={ciudad}
+          />
+          <button
+            className="btn btn-primary"
+            onClick={() => {
+              changeContry(ciudad);
+            }}
+          >
+            Buscar
+          </button>
+          <button className="btn btn-primary " onClick={geoPosition}>
+            localizar
+          </button>
+          <div> los resultados</div>
+        </div>
+      )}
+
+      {data && (
+        <div className="w-100 flex">
+          <Tarjetap data={data} />
+          <div className="w-100">
+            <Pronostico data={data} />
+            <Info data={data} />
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </>
   );
 }
