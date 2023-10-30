@@ -43,7 +43,7 @@ body {
 @media (min-width: 2160px) {}
 
 
-div {
-  border: solid 1px ;
+li {
+  list-style: none;
 }
   

@@ -13,7 +13,7 @@ function Tarjetap({ data }) {
   return (
     <>
       <div className="w-96 aling-center  md:mx-auto  h-auto bg-[#1E213A]">
-        <div className=" grid place-items-center mt-14">
+        <div className=" grid place-items-center mt-14 bg-fixed ...">
           <img
             class="scale-150 "
             src={`https://openweathermap.org/img/wn/${data.current?.weather[0].icon}.png`}
