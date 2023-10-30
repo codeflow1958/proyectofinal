@@ -22,9 +22,15 @@ function Pronostico({ data }) {
                 alt="Weather"
               />
             </div>
+
             <div className=" grid grid-cols-2 gap-3 text-white">
               <div className="">{item.temp?.min}C</div>
               <div className="maxima">{item.temp?.max}C</div>
+
+            <div className=" grid grid-cols-2">
+              <div className="minima">{item.temp?.min}</div>
+              <div className="maxima">{item.temp?.max}</div>
+
             </div>
           </div>
         ))}
