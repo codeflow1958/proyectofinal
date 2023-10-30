@@ -8,14 +8,6 @@ function Info({ data }) {
         <div>
           <section className="w-96 grid grid-cols-2 gap-4 py-3 px-3 ">
             <div className="bg-[#1E213A]">
-
-        <div className="mt-5">
-          <h1> Today Hightlights</h1>
-        </div>
-        <div>
-          <section className="w-96 grid grid-cols-2 gap-4 py-3 px-3 mt-2 ">
-            <div>
-
               <p>Wind Status</p>
               <p>{data.current?.wind_speed}Mph</p>
             </div>
@@ -34,9 +26,6 @@ function Info({ data }) {
           </section>
           <section className="w-96 grid grid-cols-2 gap-4 py-3  px-3">
             <div className="bg-[#1E213A]">
-
-          <section className="w-96 grid grid-cols-2 gap-4 py-3  px-3 mt-3">
-            <div>
               <p>visibilyti</p>
               <p>{data.current?.visibility} </p>
             </div>

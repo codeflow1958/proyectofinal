@@ -22,8 +22,7 @@ function App() {
 
   return (
     <>
-
-      <main className="m">
+      <main>
         <div className="bg-[#1E213A]">
           {!buscar && (
             <div className="mr-5">
@@ -77,7 +76,6 @@ function App() {
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   >
-                    {" "}
                     <circle cx="11" cy="11" r="8" />{" "}
                     <line x1="21" y1="21" x2="16.65" y2="16.65" />
                   </svg>
@@ -103,7 +101,7 @@ function App() {
                     />
                   </svg>
                 </button>
-                <div className="text-white                                   ">
+                <div className="text-white">
                   {week.map((element, i) => (
                     <li>
                       <button
@@ -124,33 +122,6 @@ function App() {
 
         {data && (
           <div className="w-100 flex h-auto">
-
-      <main className=" h-screen ">
-        <nav className="flex">
-          <div className="flex-1 w-64">
-            <input
-              type="text"
-              onChange={(e) => setCiudad(e.target.value)}
-              value={ciudad}
-            />
-            <button
-              className=" bg-blue-400 rounded- hover:bg-blue-500 text-white font-bold py-2 px-4 rounded "
-              onClick={() => {
-                changeContry(ciudad);
-              }}
-            >
-              Buscar
-            </button>
-          </div>
-          <div className=" flex gap-2 flex-1 w-32">
-            <p>Weather</p>
-            <p> {ciudad}</p>
-          </div>
-        </nav>
-
-        {data && (
-          <div className="w-100 flex mt-5">
-
             <Tarjetap data={data} />
             <div className="w-100 bg-[#100E1D] text-white ">
               <Pronostico data={data} />
